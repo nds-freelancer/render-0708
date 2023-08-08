@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 public class DatabaseConfig {
 
 	private static String driver = "com.mysql.jdbc.Driver";
-	private static String dbURL = "jdbc:mysql://localhost:3306/world";
-	private static String user = "root";
-	private static String pass = "root";
+	private static String dbURL = "jdbc:mysql://db4free.net:3306/sql6636966";
+	private static String user = "sql6636966";
+	private static String pass = "qaz@#$123";
 	
 	
 	public static Connection getConnection() throws Exception {

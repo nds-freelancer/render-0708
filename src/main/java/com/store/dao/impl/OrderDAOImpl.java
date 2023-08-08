@@ -15,8 +15,8 @@ public class OrderDAOImpl {
 			
 			Statement stmt = DatabaseConfig.getConnection().createStatement();
 
-			String query = "insert orderCake(cakeId, number, customer, phone, address, dateShip, dateOrder, status)"
-					+ "values('"+order.getCakeId()+"',"
+			String query = "insert orderCake(number, customer, phone, address, dateShip, dateOrder, status)"
+					+ "values("
 							+ "'"+order.getNumber()+"',"
 							+ "'"+order.getCustomer()+"',"
 							+ "'"+order.getPhone()+"',"

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.store.dao.impl.CakeDAOImpl;
+import com.store.dao.impl.OrderDAOImpl;
 import com.store.dto.CakeDto;
 import com.store.dto.OrderDto;
 
@@ -20,7 +21,8 @@ import com.store.dto.OrderDto;
 public class AppApplication {
 
 	private CakeDAOImpl cakeDao = new CakeDAOImpl();
-	
+	private OrderDAOImpl orderDao = new OrderDAOImpl();
+
 	public static void main(String[] args) {
 		SpringApplication.run(AppApplication.class, args);
 	}
@@ -81,6 +83,7 @@ public class AppApplication {
 	  @PostMapping("/save-order")
 	  public String saveProduct(@ModelAttribute OrderDto orderDto,  Model model) {
 		  orderDto.setStatus("inprogress");
+		  orderDao.updateOrder(orderDto);
 		//List<CakeDto> listPro = cakeDao.listProduct(1);
 		// model.addAttribute("listPro",listPro);
 		  OrderDto order = new OrderDto();
